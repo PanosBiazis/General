@@ -1,0 +1,26 @@
+[panos@panosb21 Documents]$ source mypy/bin/activate
+(mypy) [panos@panosb21 Documents]$ deactivate
+
+
+sudo "$(which python3)" "/media/panos/SAMSUNG T7/panag/Documents/ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ/ai_gbt/Ai_gbt3.py"
+
+(mypy) panos@panos-IdeaPad-Slim-9-14ITL5:/media/panos/SAMSUNGT7/panag/Documents$ apt search ntplib
+python3-ntplib/oracular 0.3.3-3 all
+  Python NTP library (Python 3.x)
+
+(mypy) panos@panos-IdeaPad-Slim-9-14ITL5:/media/panos/SAMSUNGT7/panag/Documents$ sudo apt install python3-ntplib
+
+pythonvenv
+
+panos@panos-IdeaPad-Slim-9-14ITL5:/media/panos/panag$ source /home/panos/pythonvenv/bin/activate
+
+(pythonvenv) panos@panos-IdeaPad-Slim-9-14ITL5:/media/panos/panag$ python "/media/panos/panag/Documents/python.py"
+
+sudo dnf install python3
+
+python3 -m venv myenv
+
+source myenv/bin/activate
+
+deactivate
+
