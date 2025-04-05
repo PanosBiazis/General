@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with SFML",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-IC:/SFM-2.4.0/include",  // Path to SFML include folder
+                "-LC:/SFML-2.4.0/lib",      // Path to SFML lib folder
+                "-o",
+                "MySFMLProgram.exe",
+                "*.cpp",              // Or specify your source files
+                "-lsfml-audio",       // Add the required libraries here
+                "-lsfml-network",     // (you may need this depending on your project)
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
