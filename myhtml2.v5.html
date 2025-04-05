@@ -1,0 +1,143 @@
+<!DOCTYPE html><!--html5-->
+<meta charset="UTF-8"><!--Character set used within the webpage can just be defined using <meta> tag and charset attribute-->
+<!--UTF-8,DEFAULT character encoding used by html 5.-->
+<head>
+    <title>My html file vol 2</title>
+</head>
+<body>
+    <audio controls="controls">
+        <source src="C:\Users\panag\Music\Eminem - Godzilla ft. Juice WRLD (Directed by Cole Bennett).m4a" type="audio/mp3">
+    </audio>
+    <p> </p>
+    <p> </p>
+    <script>
+     var ans=prompt("Do you like this song?");
+     document.writeln(ans);
+    </script>
+    <header>
+        <!--The header element represents a header for the document or a section of a document.-->
+        <nav>
+            <!--The nav element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents.-->
+        </nav>
+    </header>
+    <section>
+        <!-- The section element represents a section in a document.-->
+        <!--it is the same as <div> but more specific.-->
+        <article>
+            <!--The article element represents an independent, self-contained content.-->
+            <!--It should be possible to understand the content of an article without having to read the whole article.-->
+            <!--It can be used to represent a blog post, a news article, or a comment section on a website.-->
+            <aside>
+                <!--The aside element represents a portion of a document whose content is only indirectly related to the document's main content.-->
+                <!--The aside element represents a section that is for notes, references, or further reading.-->
+            </aside>
+        </article>
+    </section>  
+    <footer>
+        <!-- The footer element represents a footer for its nearest sectioning content or sectioning root element.-->
+    </footer>
+    <video controls="controls" width="500" height="500" autoplay poster="D:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ\Machine learning Lessons.png">
+        <source src="" type "video/mp4"><!--mp4 is more preferable than webm--><!--??-->
+    </video>
+    <form>
+        <!--The form element represents a document section that contains form controls.-->
+        <!--It can represent either a collection of fields or a single form field.-->
+        <!--It can be used to collect user input from the user.-->
+        <!--This will create a container for storing similar elements-->
+        <fieldset size="30" color="red" style="width:100%" width="500px" height="500px" align="center">
+            <!--The fieldset element represents a set of form controls.-->
+            <!--This will provide a name for fieldset-->
+        <legend>Contact information:</legend>
+        <!--The legend element represents a caption for the content of its parent fieldset element.-->
+        Email Address please:<input type="text" placeholder="ENTER YOUR EMAIL HERE!" width="300"> <br>
+        Phone number please:<input type="text" placeholder="ENTER YOUR PHONE NUMBER HERE!" width="300"> <br>
+        Name please:<input type="text" placeholder="ENTER YOUR NAME HERE!" width="300"> <br>
+        </fieldset>
+        User name:<input type="text" placeholder="ENTER YOUR USER NAME HERE!" width="300" required> <br>
+        Password:<input type="password" placeholder="ENTER YOUR PASSWORD HERE!" width="300" required> <br>
+        Favourite number:<input type="number" placeholder="ENTER YOUR NUMBER HERE!" width="300" required> <br>
+        Favourite color:<input type="color" placeholder="ENTER YOUR COLOR HERE!" width="300" required> <br>
+        Your Email again:<input type="email" placeholder="ENTER YOUR EMAIL HERE!" width="300" required> <br>
+        Your Date of birth:<input type="date" placeholder="ENTER YOUR DATE HERE!" width="300" required> <br>
+        Your favourite Time:<input type="time" placeholder="ENTER YOUR TIME HERE!" width="300" required> <br>
+        Your favourite URL:<input type="url" placeholder="ENTER YOUR URL HERE!" width="300" required> <br>
+        Your favourite Date :<input type="date" placeholder="ENTER YOUR DATE HERE!" width="300" required> <br>
+        Gender:<input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="checkbox" name="vehicle" value="Bike">I have a bike
+        <br>
+        <input type="checkbox" name="vehicle" value="Car">I have a car
+        <br>
+        <input type="checkbox" name="vehicle" value="Boat">I have a boat
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <p> </p>
+    <p> </p>
+    <script>
+        confirm("Do you like this video?");
+    </script>
+    <!--This will create a container for adding an external content-->
+    <embed src ="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D" type="video/quicktime" width="300" height="300">
+    <!--This will give the opportunity  to edit the content-->
+    <p contenteditable="true">Hello World</p>
+    <p draggable="true">Drag me!</p>
+    <p id="drag1" draggable="true">Drag me too!</p>
+    <div id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div draggable="true">Can be dragged and dropped into drop zone.</div>
+    <!--ondragstart an event to be defined using javascript on the element to be dragged.-->
+    <!--ondragover an event to specify where data can be dropped.-->
+    <!--type="text/javascript" for javascript-->
+    <!--Graphics,charts,animations etc. can be added to the website using <canvas> element-->
+    <canvas id="createCanvas" width="300" height="200" style="border: 1px solid;">
+    </canvas>
+    <script type="text/javascript">
+        var c = document.getElementById("createCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(5, 5, 50, 50);
+        ctx.clearRect(15, 15, 30, 30);
+    </script>
+    <p> </p>
+    <p> </p>
+    <script>
+        document.writeln("If you Want to see more for javascript click here <a href='https://www.w3schools.com/js/default.asp' target='_blank'>W3Schools JS</a>");
+        document.writeln("Or if you want to see more for HTML click here <a href='https://www.w3schools.com/html/default.asp' target='_blank'>W3Schools HTML</a>");
+        document.writeln("Or if you want to see more for CSS click here <a href='https://www.w3schools.com/css/default.asp' target='_blank'>W3Schools CSS</a>");
+        document.writeln("If you Want to see more for javascript click here <a href='D:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ\JS_WP.html' target='_blank'>JavaScript</a>");
+        document.writeln("If you want to go to the previous html file click here <a href='D:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ\myHTML.html' target='_blank'>HTML vol 1</a>");
+        document.writeln("If you want to click google file click here <a href='https://www.google.com' target='_blank'>Google</a>  or click here <a href='D:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ\www.google.com.html' target='_blank'>Google file</a>");
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        function showCoords(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var coor = "X coordinate is " + x + " and Y coordinate is " + y;
+            document.getElementById("show").innerHTML = coor;
+        }
+    </script>
+</body>
+</html>
+<!--For semantic structure:<header>,<footer>,<article>,<aside>,<section>,<nav>,<main>,<details>,<summary>-->
+<!--Media tags:<audio>,<video>,<picture>,<source>,<canvas>,<map>,<embed>-->
+<!--Better Forms with:required,min,max,autofocus,<datalist>,<output>,<meter>,<progress>,<textarea>,<select>,<input>-->
+<!--<center> : center the text in the middle,<font> : change the font of the text,<u> : underline the text,
+  <strike> : underline and strikethrough the text, <dir> : change the direction of the text,
+    width,height,rules,summary:Attributes of <table> for sudying rows and columns,
+        name:Specifies name of an input element.Deprecated for <form> but not other elements.
+            type:Deprecated for <script> used writing JS in HTML. type helps you to specify the type of input 
+                <form autocomplete="on/off"> : for autocomplete with the previous values
+                    <fieldset> : for grouping related elements
+                        all of these are nested to the fieldset inside the form tag.
+                        <legend> : forto provide a name/title to the <fieldset>
+                        <input> : for input
+                        <label> : for labeling -->

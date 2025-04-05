@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScript</title>
+</head>
+<style type="text/css">
+    body{
+    background-color: rgb(0, 255, 0);/*background color */
+    background-size: cover;/* background image size*/
+
+    fieldset {
+          margin-bottom: 20px;  /*spacing between fieldsets*/
+          border: 20px solid rgb(255, 0, 0); /*border color and thickness*/
+          border-right: 20px solid rgb(255, 0, 0); /*border color and thickness*/
+          border-bottom: 20px solid rgb(255, 0, 0); /*border color and thickness*/
+          background-color: grey; /*background color*/
+        }    
+}
+</style>
+<body>
+    <header>
+        <style>
+
+        </style>
+        <h1 style="color: chocolate; text-align: center;"><b><u>JavaScript Programming</u></b></h1><!-- heading-->
+        <script>
+            alert("Welcome to my Website!");
+            alert("This site is designed for EDUCATIONAL PURPOSES ONLY.");
+            document.writeln("<p style=color:blue;><u><b>© Author : Panagiotis Biazis</u></b></p>");
+        </script>
+    </header>
+    <section>
+    <p><h1><b><u>Scope in JS</u></b></h1> </p>
+    <!--This will define a function-->
+    <script>
+        var globalVar=5; //Global variable declaration. It is accessible throughout the code. 
+        function locanfunction(){
+            //This will create a variable and store value 50
+            var localvar=50;
+            document.writeln(console.log(localvar));//This will print 50 to console.
+
+        }
+        //document.writeln(console.log(localvar));//It will show an error because the 'localvar' is not defined outside of the function
+        locanfunction();//Calling the function here
+        function newFunction(){
+            document.writeln(console.log(globalVar)); //Accessing the Global Variable Here
+        }
+        document.writeln(console.log("Outside Function: "+globalVar)); //Printing outside of any functions, accessing the global variable
+        newFunction();
+        //In JS ,all the variable declarationa are moved to the top of their scope.This is called hoisting.
+        //In JS, variables can be used before it is declared. But in case of functions, they cannot be used before they are declared.
+        //So, even if we declare a variable before it is used, it will be treated as a global variable.
+        myVariable = "I am declared before being used.";
+        document.writeln(console.log(myVariable));
+        document.writeln(myVariable);
+    </script>
+    </section>    
+    <p> </p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>String in JS</u></b></h1></p>
+    <script>
+        var newStr= "Hey! I am a string.";
+        newStr.length;//length of the string
+        document.write("Length: "+newStr.length+"<br>");//length of the string
+        var string1="Hey";
+        var string2=" String";
+        var string3=string1.concat(string2);//concatenating two strings
+        document.write("Concatination: "+string3+"<br>");//concatenated string
+        document.write("Replaced: "+string3.replace("Hey","Hello"));//replaced string
+        document.write("<br>Uppercase: "+string3.toUpperCase());//upper cased string
+        document.write("<br>Lowercase: "+string3.toLowerCase());//lower cased string
+        document.write("<br>Index of: "+string3.indexOf("Hey"));//index of the string
+        var string4=string1+string2;//adding two strings
+        document.write("<br>Addition: "+string4);//added string
+        var myString="I am in love with Strings.";
+        myString.substring(5,7);//it returns the substring from 5th index to 7th index
+        document.write("<br>Substring: "+myString.substring(5,7));
+    </script>
+    </section>
+    <p> </p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>Numbers and Booleans in JS</u></b></h1></p>
+    <script>
+        var myNum=3.142;
+        myNum.toFixed(2);//rounds the number to 2 decimal places
+        document.write("Number after round off is: "+myNum.toFixed(2)); //rounds the number to 2 decimal places
+        var newNum=34.463;
+        newNum.toFixed(2);//rounds the number to 2 decimal places
+        document.write("<br>Number after round off is: "+newNum.toFixed(2)); //rounds the number to 2 decimal places
+        myNum.toString();//converts the number to string
+        document.write("<br>String: "+myNum.toString());
+        myNum.toPrecision(3);//rounds the number to 3 decimal places
+        document.write("<br>Precision is: "+myNum.toPrecision(3));
+        document.write("<br>Value: "+(myNum.valueOf())); //returns the value of the variable
+        document.write("<br>Value: "+(newNum.valueOf()));
+        newNum.toPrecision(3);//rounds the number to 3 decimal places
+        document.write("<br>Precision is "+(newNum.toPrecision(2)));
+        //comparing numbers using == operator
+        document.write("<br>== Operator: "+(myNum==newNum));
+        //comparing numbers using === operator
+        document.write("<br>=== Operator: "+(myNum===newNum));
+        //comparing numbers using != operator
+        document.write("<br>!= Operator: "+(myNum!=newNum));
+        var myBool=true;
+        document.write("<br>Boolean: "+myBool);
+        var newBool=false;
+        document.write("<br>Boolean: "+newBool);
+    </script>
+    </section> 
+    <p> </p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>Objects in JS</u></b></h1></p>
+    <script>
+        //An object is a collection of properties or related information. Each object has properties and methods.
+        //Each property has a name (or key) and a value.
+        //the objects store value  but the only difference is that variables store single values and object store multiple values.
+        //In JavaScript, objects are collections of properties.
+        //An object can contain many properties or methods.
+        //To create an empty object use {}.
+        var student={//creating an object(literal) named student
+            First_Name:"Panos",
+            Last_Name:"Biazis",
+            Class:"C3",
+            Age:20,
+            City:"Athens",
+            ID:21114,
+            Grade:"S+"
+        };
+        var Student2=new object();//creating an object using the new keyword with no parameters
+        /*The new Object() method returns an empty object.
+          An object created with this constructor has no methods or properties.*/
+          Student2.First_Name="John";
+          Student2.Last_Name="Doe";
+          Student2.Class="C3";
+          Student2.Age=20;
+          Student2.ID=21113;
+          Student2.City="Athens";
+          function Student3(First_Name,Last_Name,Class,Age,ID,City){//creating an object with parameters as a object constructor
+            this.First_Name=First_Name;
+            this.Last_Name=Last_Name;
+            this.Class=Class;
+            this.Age=Age;
+            this.ID=ID;
+            this.City=City;
+          }
+          var Student4=new Student3("Al","Capone","C3",25,16005,"Mexico City");
+          document.writeln("<br>"+Student4.First_Name+" "+Student4.Last_Name+" "+Student4.Class+" "+Student4.Age+" "+Student4.ID+" "+Student4.City);
+          
+          document.writeln("<br><br>"+student.First_Name+" "+student.Last_Name+" "+student.Class+" "+student.Age+" "+student.ID+" "+student.City);
+          document.writeln("<br><br>"+Student2.First_Name+" "+Student2.Last_Name+" "+Student2.Class+" "+Student2.Age+" "+Student2.ID+" "+Student2.City);
+          //Accessing object properties using dot notation .
+          document.writeln("<br>Student's First Name: "+student.First_Name);
+          student.First_Name="John";
+          student.name="Green";
+          document.writeln("<br>New Student's First Name: "+student.name);
+          //Accessing object properties using bracket notation .
+          document.writeln("<br>Student's First Name: "+student["First_Name"]);
+          student["First_Name"]="John";
+          student["name"]="Green";
+          document.writeln("<br>New Student's First Name: "+student["name"]);
+          document.writeln("<br><b><u>My first name is : "+student["First_Name"]+" <br>and<br> my last name is : "+student["name"]+"</u></b>");
+          
+    </script>
+    <script>
+        var answer=confirm("This is your ID: "+student.ID);
+        document.writeln("<br>This is your answer: "+answer);
+        if (answer==true){
+            document.writeln("<br>I got you!!!");
+        }
+        if(answer==false){
+            document.writeln("<br>Maybe next time!!!");
+        }
+    </script>
+    </section>
+    <p> </p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>Dates in JS</u></b></h1></p>
+    <script>
+    var myDates=new Date();
+    document.writeln("<br>"+myDates);
+    //getDate() returns the day of the month (1-31) for the current date according to local time. 
+    //getDay() returns the day of the week (0-6) for the current date according to local time.
+    //getFullYear() returns the year for the current date according to local time.
+    //getTime() returns the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+    //getMonth() returns the month (0-11) for the current date according to local time. In JavaScript, months are zero based. So, January is month 0.
+    //getHours() returns the hour (0-23) for the current date according to local time.
+    //getMinutes() returns the minute (0-59) for the current date according to local time.
+    //getSeconds() returns the second (0-59) for the current date according to local time.
+    document.writeln("<br> Year: "+myDates.getFULLYear());
+    document.writeln("<br> Date: "+myDates.getDate);
+    document.writeln("<br> Day: "+myDates.getDay);
+    document.writeln("<br> Month: "+myDates.getMonth);
+    document.writeln("<br> Time: "+myDates.getTime);
+    document.writeln("<br> Hours: "+myDates.getHours);
+    myDates.getFULLYear()
+    myDates.getDate();//returns the day of the month (1-31) for the current date according to local time.
+    myDates.getDay();//returns 0 for Sunday and 6 for
+    myDates.getMonth();//returns 0 for January and 11 for
+    myDates.getTime();//returns the number of milliseconds since January 1, 1970, 00:00:00 UTC
+    myDates.getHours();//returns the hour (0-23) for the current date according to local time.
+    //setDate() sets the day of the month for the current date according to local time.
+    //setHours(), setMinutes(), setSeconds() sets the hour, minute, and second for the current date according to local time.
+    //setFullYear() sets the year for the current date according to local time.
+    //setMonth() sets the month for the current date according to local time.
+    //setTime() sets the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+    myDates.setFullYear(2025);
+    </script>
+    </section>
+    <p> </p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>DOM(Document Object Model) in JS</u></b></h1></p>
+    <p class="newClass">Are you trying to access me using the class?</p>
+    <p id="newId">Are you trying to access me using the id?</p>
+    <script>
+        //DOM stands for Document Object Model is the soul of web applications.
+        //DOM is a programming interface for HTML and XML documents.
+        //It represents the structure of an HTML document as nodes and objects.
+        //The nodes can be accessed using JavaScript.
+        //It is a tree structure of objects created by the browser.
+        //This tree consist of elements, attributes, text nodes and comments.
+        //Thus HTML DOM outlines a standard using which we can add,delete,get or change the elements of HTML.
+        //DOM is created when such a file is opened in the web browser.
+        /*There are 3 identifiers by which these nodes can be accessed.
+        1. Element ID - Unique identifier for an element.
+        2. Element Class - Unique identifier for an element.
+        3. Element Name - The name of the element.
+        */
+        document.getElementById("demo");//Accessing the element with id "demo"
+        document.getElementsByClassName("demo");//Accessing the element with class "demo"
+        document.getElementsByName("demo");//Accessing the element with name "demo"
+        document.getElementsByTagName("h1");//Accessing the element with tag name "h1"
+        document.querySelectorAll("h1");//Accessing the element with tag name "h1"
+        document.getElementsByTagName("p");//Accessing the element with tag name "p"
+        document.getElementsByClassName("newClass");//Accessing the element with class "newClass"
+        document.getElementById("newId");//Accessing the element with id "newId"
+    </script>
+    </section> 
+    <p> </p>
+    <p class="custom-p">Don't try to access me using my</p>
+    <p id="custom-p2">Don't even think of it!</p>
+    <p> </p>
+    <section>
+    <p style="color:deepskyblue"><h1><b><u>Accessing HTML elements using JS</u></b></h1></p>
+    <script>
+        document.getElementsByTagName("h1");//Returns all h1 tags in the page
+        document.getElementById("custom-p2");//Returns the element with id "custom-p2"
+        //Accessing HTML elements by CSS Selectors
+        //CSS selectors are used to select HTML elements. They use HTML tags names, ids, classes etc.
+        //There are two methods that can be used to access HTML elements.
+        //1. querySelector() : It returns the first element that matches the specified CSS selector.  If no element matches the selector, it returns null.
+        //2. querySelectorAll() : It returns all elements that matches the specified CSS selector. If no element matches the selector, it returns an empty list.
+        document.querySelector("h1");//Returns the first h1 tag in the page
+        document.querySelector(".custom-p");//Returns the element with class "custom-p"
+        document.querySelectorAll("p");//Returns all p tags in the page
+        document.querySelectorAll("p")[0];//Returns the first p tag in the page
+        document.querySelectorAll("p")[1];//Returns the second p tag in the page
+        document.querySelector("#custom-p2").innerHTML = "Hello World!";//Changing the innerHTML of the element with id "custom-p2"
+    </script>
+    </section>
+    <p> </p>
+    <p id="lone-p"></p>
+    <p id="not-alone">Here is my text</p>
+    <p id="bold me"></p>
+    <div id="meDiv"></div>
+    <div id=""thisDiv>
+        <p id="thisP">
+            Hehe! I am going to die.
+        </p>
+    </div>
+    <a>Google</a>
+    <a href="https://www.google.com">Google</a>
+    <p> </p>
+    <section>
+    <p><h1><b><u>Manipulating HTML elements using JS</u></b></h1></p>
+    <script>
+        //Manipulating HTML elements
+        //JS provides innerHTML property which can be used to set the contents of HTML
+        document.getElementById("lone-p").innerHTML = "Here is some text for you";//Changing the innerHTML of the element with id "lone-p"
+        document.getElementById("not-alone").innerHTML = "Replace you!";//Changing the innerHTML of the element with id "not-alone"
+        document.getElementById("bold me").innerHTML = "<b>Just like this.</b>";//Changing the innerHTML of the element with id "bold me"
+        document.createElement("p");//Creating a new HTML element (returns an object)
+        var newEI=document.createElement("p");//Creating a new HTML element (returns an object)
+        var someText=document.createTextNode("Some text Here!");//Creating a new text node
+        var insertThis=newEI.appendChild(someText);//Appending the text node to the new element
+        document.getElementById("meDiv").appendChild(insertThis);//Appending the new element to the div
+        var divEI=document.getElementById("thisDiv");//Accessing the element with id "thisDiv"
+        var pEI=document.getElementById("thisP");//Accessing the element with id "thisP"
+       // divEI.removeChild(pEI);//Removing the element with id "thisP" from the div with id "thisDiv"
+        /*Attributes provide additional information about the element.
+         *We can set the values of attributes present in the elements using JS.
+         *This can be achieved using the setAttribute() and getAttribute() methods.
+         *The setAttribute() method sets the value of an attribute. If the attribute does not exist it will create one.
+         *The setAttribute() method takes two parameters, the name of the attribute and its value.
+         *setAttribute("attribute","value");
+         *The removeAttribute() method removes the specified attribute.
+         *The getAttribute() method returns the value of an attribute.*/
+         var aEI=document.querySelector("a");//Accessing the element with id "a"
+         aEI.setAttribute("href","https://www.google.com");//Setting the href attribute of the element with id "a"
+         document.querySelector("a").removeAttribute("href");//Removing the href attribute of the element with id "a"
+    </script>    
+    </section>
+    <p> </p>
+    <p> Here i come,again.</p>
+    <p> </p>
+    <section>
+    <p><h1><b><u>Manipulating CSS using JS</u></b></h1></p>
+    <script>
+        //Manipulating CSS
+        //JS provides innerHTML property which can be used to set the contents of HTML
+        //But it does not have any direct access to the CSS.
+        //el.style.CSSproperty=value; //setting the CSS property for inline styles
+        //Or we can use classList property to add or remove classes dynamically.
+        var el=document.querySelector("p");
+        el.style.fontSize="25px";//Setting font size as 25 pixels
+        el.style.color="red";//Setting color as red
+        el.style.backgroundColor="blue";//Setting background color as blue
+       // el.style.display("none");//Hiding the element by setting display none
+    </script>
+    </section>
+    <p> </p>
+    <p> </p>
+    <section>
+        <p><h1><b><u>Events in JS</u></b></h1></p>
+        <script>
+            //Events are actions that occur when something happens in the webpage.An Event is an occurence
+            //Events can either occur by action of the user or by the action of the browser itself.
+            //There are different types of events.
+            //onclick()  - occurs when the user clicks on the element.
+            //onmouseover() - occurs when the user moves the mouse over the element. 
+            //onmouseout()  - occurs when the user moves the mouse away from the element.
+            //onkeypress()  - occurs when the user presses a key on the keyboard.
+            //onkeydown()   - occurs when the user presses a key on the keyboard.
+            //onkeyup()    - occurs when the user releases a key on the keyboard.
+            //onload()    - occurs when the page has finished loading.
+            //We can add an event listener to an element using the addEventListener() method.
+            //The addEventListener() method takes two parameters, the name of the event and the function to be executed when the event occurs.
+            //addEventListener(event,function,useCapture);
+            //Here 'event' is the type of event and 'function' is the function to be executed when the event occurs.
+            //The useCapture parameter specifies whether the event should occur in the capturing or bubbling phase.
+            //If useCapture is set to true, the event will occur in the capturing phase. If it is set to false, the event will occur in the bubbling phase.
+            //Here 'event' is the type of event and 'function' is the function to be executed when the event occurs.
+            //The useCapture parameter specifies whether the event should occur in the capturing or bubbling phase.
+            //Events can be written in two ways:
+            //writing the events inline
+            <button onclick="alert('Oh! Clicked.')">Click me</button>
+            /*Inline Events*/
+            //Another way is to call a function which is defined elsewhere in the program when the button is clicked.
+            /*<button>Click me</button>//Defining the element with the tag name button and assigning it to a variable
+            var myBtn=document.querySelector("button"); //Accessing the element with id "button"
+            myBtn.addEventListener("click",function(){//Defining the function outside and passing it inside the eventListener
+                alert("Oh! Clicked.");//Calling the function when clicked
+            });*/
+            //removeEventLiatener() - removes an event listener from an element.
+            /*var myBtn=document.querySelector("button");
+            myBtn.removeEventListener('click');*/
+        </script>
+    </section>
+    <div>
+        <script>
+            /*<button onclick="clicked()">Click me</button>
+            function clicked(){
+                alert("Oh! Clicked.");
+            }*/
+        </script>
+    </div>
+    <p> </p>
+    <p> </p>
+    <section>
+        <p><h1><b><u>(BOM) Browser Object Model</u></b></h1></p>
+        <script>
+            /*BOM - Browser Object Model enables JS to interact with the browser. 
+            It provides access to the following properties:
+            window - the window object represents the web browser application and contains properties about the window
+            The window object has the following properties and methods:
+            document - the document object represents the HTML document that is currently loaded in the browser.
+            history - the history object allows you to manipulate the browser's session history.
+            navigator - the navigator object contains information about the browser and its environment. It allows you to access browser-specific features and functionality.
+                     This is useful for implementing backward compatibility.
+            location - the location object contains information about the current URL and allows you to manipulate it.
+            Screen - the screen object provides access to the screen's properties and methods.
+            //The window object stores information about the current window.
+            window.innerHeight; //Returns the inner height of the current window.
+            window.innerWidth; //Returns the inner width of the current window.
+            window.outerHeight; //Returns the outer height of the current window.
+            window.outerWidth; //Returns the outer width of the current window.
+            Screen object contains the information about the screen.
+            to access the screen object:
+            window.screen; or screen
+            screen.height; //Returns the height of the screen.
+            screen.width; //Returns the width of the screen.
+            screen.availHeight; //Returns the available height of the screen.
+            screen.availWidth; //Returns the available width of the screen.
+            screen.colorDepth; //Returns the color depth of the screen.
+            screen.pixelDepth; //Returns the pixel depth of the screen.
+            screen.orientation; //Returns the orientation of the screen.
+            history object give us access to the browser's session history.
+            the history object has the following properties and methods:
+            history.length; //Returns the number of entries in the history object.
+            history.back(); //Navigates to the previous page in the session history.
+            history.forward(); //Navigates to the next page in the session history.
+            history.go(n); //Where n is the number of pages to go back or forward in the session history.
+            Also we can write: window.history.back(); instead of just history.back().
+            The location object contains information about the current URL and allows you to manipulate it.
+            The location object has the following properties and methods:
+            window.location.href; //Returns the current URL.
+            window.location.hostname; //Returns the hostname of the current URL.
+            window.location.pathname; //Returns the pathname of the current URL.
+            window.location.protocol; //Returns the protocol of the current URL. (e.g., http:)
+            The navigator object contains information about the browser and its environment.
+            window.navigator.appCodeName; //Returns the application code name.
+            window.navigator.appName; //Returns the application name.
+            window.navigator.appVersion; //Returns the application version.
+            window.navigator.platform; //Returns the platform.
+            window.navigator.userAgent; //Returns the user agent.
+            window.navigator.cookieEnabled; //Returns whether cookies are enabled.
+            window.navigator.onLine; //Returns whether the browser is online.
+            window.navigator.javaEnabled(); //Returns whether Java is enabled.
+            */
+            window.location.href;
+            window.location.hostname;
+            window.location.pathname;
+            window.location.protocol;
+            window.navigator.appCodeName;
+            window.navigator.appName;
+            window.navigator.appVersion;
+            window.navigator.platform;
+            window.navigator.userAgent;
+            window.navigator.cookieEnabled;
+            window.navigator.onLine;
+        </script>
+    </section>
+    <p> </p>
+    <p> </p>
+    <section>
+        <p><h1><b><u>Cookies</u></b></h1></p>
+        <script>
+            //Cookies are small text files that are stored in the browser and can be sent with a web request to a server.
+            //The cookies can be used to store information about the user's preferences and behavior.
+            document.cookie="key=value expires:Date;";  //Sets a cookie named "key" with the value "value". The cookie will expire at the specified date.
+            document.cookie="key1=value1"; //Sets a cookie named "key1" with the value "value1".
+            document.cookie="key2=value2"; //Sets a cookie named "key2" with the value "value2"
+            var myCook=document.cookie; //Gives the string containing all the cookies
+            document.cookie="username=panagiotis; expires=Thu, 18 Mar 2024 00:00:00 GMT; path=/";//Sets a cookie named "username" with the value "panagiotis". The cookie will expire at the specified date.
+            document.cookie = "key=; expires =Past_date;"; //Sets a cookie named "key" with the value "value". The cookie will expire at the specified date.To delete the cookie.
+        </script>
+    </section> 
+    <p> </p>
+    <p> </p>
+    <section>
+        <p><h1><b><u>es6 or ECMAScript</u></b></h1></p> 
+        <script>
+            //ES6 or ECMAScript is a modern JavaScript syntax and features that are being standardized by the Ecma International.
+            //It is the successor of JavaScript. It introduces new features like classes, modules, and import/export statements.
+            //It also introduces some syntax that is not supported in JavaScript.
+            let x = 5; //Declaration of a variable using 'let'. It allows block scoping, which means that the variable is only accessible within the block it is declared in.
+            const y = 5; //Declaration of a variable using 'const'. It allows block scoping, which means that the variable is only accessible within the block it is declared in.
+            /*Arrow function
+            It is a shorter way of writing a function. The arrow function expression has a shorter syntax than the regular function expression.
+            It is also known as fat arrow function. The arrow function expression has shorter syntax compared to regular function expression.
+            (parameters) => { statements }
+            (parameters) => {
+              // statements  
+            }
+            (parameters) => statement;
+            //we can assign the function as a variable
+            */
+            /* let varName = (parameters) => {
+              // statements
+            };*/
+            //Template strings
+            let str='Hey! String me.';
+            let a=5;
+            let str1='I am ${a} years old.';
+        </script>
+        </section>
+    <p> </p>
+    <p> </p>
+    <section>
+        <p><h1><b><u>Classes in es6</u></b></h1></p>
+        <script>
+            class Person{//class
+                constructor(name,age){//constructor
+                    this.name=name;//this refers to the object
+                    this.age=age;
+                }
+                greet(){////method
+                    document.write("Hello, my name is "+this.name+" and I am "+this.age+" years old.");//this refers to the object
+                }
+            }
+            let p1=new Person("Panagiotis",20);//creating an object of the class
+            p1.greet();//calling the method
+            var varName=class myclass{//class
+                //statements
+            };
+            class Student{
+                constructor(name,roll_no){
+                    this.name=name;
+                    this.roll_no=roll_no;
+                }
+                showName(){
+                    return name;
+                }
+                showRoll(){
+                    return roll_no;
+                }
+            }
+            let s1=new Student("Panagiotis",20);
+            document.write("Name: "+s1.showName()+"<br>Roll No: "+s1.showRoll());
+        </script>
+    </section>
+    <footer>
+        <script>
+            myDates.getFullYear();
+            document.writeln("<fieldset style=width:95%><br><u><b>© Copyright: "+myDates.getFullYear()+"</b></u><p style=color:blue; text-align:right;> <u><b>© Author : Panagiotis Biazis</u></b></p></fieldset>");
+        </script>
+    </footer>
+</body>
+</html>

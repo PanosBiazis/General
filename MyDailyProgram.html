@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Daily Program</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Panagiotis Biazis">
+    <meta name="description" content="My Daily Program">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <style>
+        table {
+            border: 5px solid black;
+            text-align: center;
+            color: black;
+            position: relative;
+            left: 10px;
+        }
+        tr {
+            border: 5px solid black;
+        }
+        th {
+            color: rgb(0, 0, 0);
+            border: 5px solid black;
+        }
+        body {
+            background-color: rgb(0, 255, 0);
+            text-align: center;
+        }
+        td {
+            color: rgb(0, 0, 0);
+            border: 5px solid black;
+        }
+        fieldset {
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+            width: 340px;
+            max-height: fit-content;
+            text-align: center;
+            background-color: white;
+            color: black;
+            position: relative;
+            left: 750px;
+        }
+        .current-time {
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>My Daily Program</legend>
+        <table id="schedule">
+            <tr>
+                <th><b><h1> Time </h1></b></th>
+                <th><b><h1> Activity </h1></b></th>
+            </tr>
+            <tr>
+                <td> 00:00-05:00 </td>
+                <td> Sleep </td>
+            </tr>
+            <tr>
+                <td> 05:00-06:00 </td>
+                <td> Be prepared for daily workout </td>
+            </tr>
+            <tr>
+                <td> 06:00-06:45 </td>
+                <td> Workout: 45 minutes Jogging </td>
+            </tr>
+            <tr>
+                <td>06:45-07:30 </td>
+                <td> Strengthening + Martial Arts </td>
+            </tr>
+            <tr>
+                <td> 07:30-08:00 </td>
+                <td> Be ready for Study </td>
+            </tr>
+            <tr>
+                <td> 08:00-10:00 </td>
+                <td> Foreign Studies </td>
+            </tr>
+            <tr>
+                <td> 10:00-12:00 </td>
+                <td> General Studies </td>
+            </tr>
+            <tr>
+                <td> 12:00-13:00 </td>
+                <td> Take dog for a walk & Eat lunch </td>
+            </tr>
+            <tr>
+                <td> 13:00-15:00 </td>
+                <td> Vocational Studies </td>
+            </tr>
+            <tr>
+                <td> 15:00-17:00 </td>
+                <td> Programming Studies </td>
+            </tr>
+            <tr>
+                <td> 17:00-19:00 </td>
+                <td> Brush-up Of Today's Studies </td>
+            </tr>
+            <tr>
+                <td> 19:00-20:00 </td>
+                <td> Walk </td>
+            </tr>
+            <tr>
+                <td> 20:00-24:00 </td>
+                <td> Rest </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <script>
+        window.onload = function () {
+            var table = document.getElementById('schedule');
+            var rows = table.getElementsByTagName('tr');
+            var currentTime = new Date().getHours() * 100 + new Date().getMinutes();
+
+            for (var i = 1; i < rows.length; i++) {
+                var rowTime = rows[i].cells[0].innerText.split('-');
+                var startTime = parseInt(rowTime[0].replace(':', ''), 10);
+                var endTime = parseInt(rowTime[1].replace(':', ''), 10);
+
+                if (currentTime >= startTime && currentTime <= endTime) {
+                    rows[i].classList.add('current-time');
+                }
+            }
+        };
+    </script>
+</body>
+</html>

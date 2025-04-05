@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VBScript in HTML Example</title>
+</head>
+<body>
+    <h1>Welcome to VBScript Embedded in HTML</h1>
+    
+    <script language="VBScript">
+        ' Display an alert when the page loads
+        MsgBox "Hello! This is a VBScript alert from the browser."
+    </script>
+    
+    <button onclick="DisplayMessage()">Click Me</button>
+
+    <script language="VBScript">
+        ' Define a function to be called on button click
+        Sub DisplayMessage()
+            MsgBox "You clicked the button!"
+        End Sub
+    </script>
+</body>
+</html>
