@@ -1,0 +1,8 @@
+modern:
+PS ./local_file ΑΣΚΗΣΕΙΣ> gfortran myfirstfortran.f90 -o program
+PS ./local_file ΑΣΚΗΣΕΙΣ> ./myfirstfortran.exe
+
+
+old version:
+PS ./local_file ΑΣΚΗΣΕΙΣ> gfortran myfirstfortran.f -o myfirstfortran2
+PS ./local_file ΑΣΚΗΣΕΙΣ> ./myfirstfortran2.exe

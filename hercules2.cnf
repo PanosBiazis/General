@@ -1,0 +1,11 @@
+CPUSERIAL 123456       # CPU serial number
+MAINSIZE 1024          # Adjust memory size
+OSTAILOR Z/OS          # Specify the OS you're tailoring for (optional)
+
+# Devices
+0009 3505 ./disks/reader.txt      # Make sure this file exists
+# 000A 3506 ./disks/punch.txt     # Invalid device type, comment out or correct
+000B 1403 ./disks/printer.txt     # Printer
+0120 3270                         # Terminal device
+* [panos@panosb21 ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ]$ cobc -x -O2 hello.cob
+* [panos@panosb21 ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ]$ ./hello

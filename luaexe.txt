@@ -1,0 +1,5 @@
+luac script.lua -o script.luac
+bin2c script.luac > code.c
+
+luac luapl.lua -o luapl.luac
+bin2c luapl.luac > luapl.c

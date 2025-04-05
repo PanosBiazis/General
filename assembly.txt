@@ -1,0 +1,33 @@
+Step-1 Download Code Blocks - 32 Bit Windows with MingW
+http://www.codeblocks.org/downloads/b...
+
+Step-2 Download NASM - 32 Bit Windows
+https://www.nasm.us/
+
+Step-3 Extract NASM Installer in C:\Program Files (x86)\CodeBlocks\MinGW\bin
+
+Step-4 Write following Assembly Code and save in d:\demo1.asm
+global  _main
+        extern  _printf
+        section .text
+  _main:
+        push    message
+        call    _printf
+        add     esp, 4
+        ret
+   message:
+        db      'Hello World From Dr. Parag Shukla', 0
+
+Step-5 Open Command Prompt and use cd command to change directory to bin
+cd "C:\Program Files (x86)\CodeBlocks\MinGW\bin"
+
+Step-6 Generate Object File 
+nasm -f win32 d:\demo1.asm -o d:\demo1.obj
+
+Step-7 Generate Exe file using GCC
+gcc d:\demo1.obj -o d:\demo1.exe
+
+Step-8 Run Exe file to produce the output
+d:\demo1.exe
+
+Thank You
