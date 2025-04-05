@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Bike Race</title>
+</head>
+<body>
+    <style>
+        fieldset{
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+            width: 1000px;
+            max-height: fit-content;
+        }
+
+        table{
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+            width: 1000px;
+            height: 30px;
+            position: relative;
+            bottom:100px;
+        }
+
+        th{
+            margin: 5px;
+            padding: 5px;
+            width: 500px;
+            height: 30px;
+        }
+
+        td{
+            margin: 5px;
+            padding: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+            width: 500px;
+            height: 50px;
+        }
+    </style>
+        <fieldset>
+            <h1 style="color:green; position:relative; left:40px;"><u>Bike Race</u></h1>
+            <div id="add">
+                <input style="background-color: green; position:relative; left: 750px; bottom :60px; width:100px; height: 40px" type="submit" value="Add">
+            </div>
+            <div id="delete">
+                <input style="background-color: red; position:relative; left: 870px;  bottom :100px;width:100px; height: 40px" type="submit" value="Delete">
+            </div>
+            <fieldset style="max-height:30px; width:980px;  position:relative; bottom:100px; background-color: blue; border: 5px solid blue;">
+            </fieldset>
+           <table style="border: 5px solid black;">
+            <tr>
+           <th>Id</th>
+           <th style ="border: 5px solid white;"> </th>
+           <th>Name</th>
+           <th style ="border: 5px solid white;"> </th>
+           <th>Country</th>
+           <th style ="border: 5px solid white;"> </th>
+           <th>Time</th>
+           <th style ="border: 5px solid white;"> </th>
+           <th> Actions</th>
+            </tr>
+            </table>
+            <table>
+                <?php require 'Candidates.php'?>
+            </table>
+        </fieldset>
+</body>
+</html>
