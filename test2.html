@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Checker</title>
+    <style>
+        /* Optional: Add some basic styling */
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="input_quest1_theory" placeholder="Question 1">
+    <input type="text" id="input_quest2_theory" placeholder="Question 2">
+    <input type="text" id="input_quest3_theory" placeholder="Question 3">
+    <input type="text" id="input_quest4_theory" placeholder="Question 4">
+    <input type="text" id="input_quest5_theory" placeholder="Question 5">
+    <input type="text" id="input_quest6_theory" placeholder="Question 6">
+    <input type="text" id="input_quest7_theory" placeholder="Question 7">
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <script>
+        // Define the dataset
+        const answersDataset = [
+            { inputId: 'input_quest1_theory', answer: "Β" },
+            { inputId: 'input_quest2_theory', answer: "Β" },
+            { inputId: 'input_quest3_theory', answer: "Δ" },
+            { inputId: 'input_quest4_theory', answer: "Α" },
+            { inputId: 'input_quest5_theory', answer: "1 - Δ, 2 – Α, 3 – Γ, 4 – Β" },
+            { inputId: 'input_quest6_theory', answer: "Α" },
+            { inputId: 'input_quest7_theory', answer: "Α" },
+        ];
+
+        function checkAnswers() {
+            let correct = 0;
+            let incorrect = 0;
+
+            // Reset background colors
+            answersDataset.forEach(item => {
+                const userInput = document.getElementById(item.inputId);
+                userInput.style.backgroundColor = ''; // Reset background color
+            });
+
+            // Check answers
+            answersDataset.forEach(item => {
+                const userInput = document.getElementById(item.inputId);
+                const userValue = userInput.value.trim(); // Get user input
+                const correctAnswer = item.answer; // Get the correct answer
+
+                if (userValue === correctAnswer) {
+                    correct++;
+                    userInput.style.backgroundColor = 'lightgreen'; // Set background to green for correct answer
+                } else {
+                    incorrect++;
+                    userInput.style.backgroundColor = 'lightcoral'; // Set background to red for incorrect answer
+                }
+            });
+
+            console.log(`Correct answers: ${correct}`);
+            console.log(`Incorrect answers: ${incorrect}`);
+        }
+    </script>
+
+</body>
+</html>
