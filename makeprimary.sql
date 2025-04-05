@@ -1,0 +1,3 @@
+USE test2;
+
+ALTER TABLE table1 ADD CONSTRAINT id PRIMARY KEY (id);
