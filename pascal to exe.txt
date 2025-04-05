@@ -1,0 +1,3 @@
+fpc program.pas
+
+./program  # On Windows, use program.exe

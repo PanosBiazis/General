@@ -1,0 +1,26 @@
+[panos@panosb21 Documents]$ source mypy/bin/activate
+(mypy) [panos@panosb21 Documents]$ deactivate
+
+
+sudo "$(which python3)" "./project ΑΣΚΗΣΕΙΣ/ai_gbt/Ai_gbt3.py"
+
+(mypy) user@workstation:./project apt search ntplib
+python3-ntplib/oracular 0.3.3-3 all
+  Python NTP library (Python 3.x)
+
+(mypy) user@workstation:./project sudo apt install python3-ntplib
+
+pythonvenv
+
+user@workstation:./local_media source /home/user/pythonvenv/bin/activate
+
+(pythonvenv) user@workstation:./local_media python "./project"
+
+sudo dnf install python3
+
+python3 -m venv myenv
+
+source myenv/bin/activate
+
+deactivate
+

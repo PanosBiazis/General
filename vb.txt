@@ -1,0 +1,7 @@
+dotnet new console -lang vb -o MyVBApp
+
+cd MyVBApp
+code .
+
+
+dotnet run
