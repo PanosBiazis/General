@@ -1,0 +1,219 @@
+/*Extra small devices(phones,less than 768px)*/
+/*No media query since this is the default in bootstrap*/
+/*Small devices(tablets,768px and up)*/
+/*@media (min-width: @screen-sm-min) {
+}
+*/
+/*Medium devices(desktops,992px and up)*/
+/*
+@media (min-width: @screen-md-min) {
+    
+}
+*/
+/*Large devices(wide screens,1200px and up)*/
+/* @media (min-width: @screen-lg-min) { 
+    
+}
+
+@media (max-width:@screen-xs-max) {
+
+}
+
+@media(min-width: @screen-sm-min) and (max-width:@screen-sm-max) {
+
+}
+
+@media(min-width: @screen-md-min) and (max-width:@screen-md-max) {
+
+}
+
+@media(min-width: @screen-lg-min) {
+
+}  */
+@media(min-width:1360px) and (max-width:3840px) {
+    body{
+        background-color: lightgreen;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        font-size: 15px;
+        
+    }
+    .nav{
+        height:50px;
+        background: blue;
+        padding: 10px;
+    }
+    .nav div{
+        display:inline-block;
+        position: absolute;
+        left: 10px;
+        padding: 0px;
+        font-size: 20px;
+        color:white;
+    }
+    .nav ul{
+        position:absolute;
+        right: 5px;
+    }
+    .nav ul li{
+        display: inline-block;
+    }
+    .nav ul li a{
+        color: white;
+        padding: 5px;
+    }
+    .home{
+        background:url(../images/home.jpg);
+        background-size: cover;
+        height: 70vh;
+    }
+    .container{
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .image {
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        border: 3px solid black;/* */
+        margin: 10px;
+        padding: 60px;
+        background-color: white;
+        max-height: 600px;
+        max-width: 1300px;
+        position: absolute;
+        right: 500px;
+        top: 750px;
+    }
+    
+    .image img {
+        /*max-width: 100%;  Make sure images don't exceed container width 
+        max-height: 100%;  Make sure images don't exceed container height */
+        max-height: 600px;
+        max-width: 600px;
+    }
+    small{
+        color:blue;
+    }
+    mark{
+        background-color: red;
+    }
+    blockquote {
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-left: 5px solid #ccc;
+        font-style: italic;
+        quotes: "\201C""\201D""\2018""\2019"; /* Define quotation marks */
+    }
+
+    blockquote:before {
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+
+    blockquote:after {
+        content: close-quote;
+        font-size: 4em;
+        line-height:1.0em;
+        margin-left: 1.8em; /* Adjust the margin to move the closing quote */
+        vertical-align: 0.8em;/* Adjust the vertical-align to move the closing quote down */
+    }
+
+    .text .code{
+        background-color: white;
+        border: 3px solid black;
+        position: relative;
+        text-align: left;
+    }
+
+    .text .Keyboard_Input{
+        background-color: white;
+        border: 3px solid black;
+        position: relative;
+        text-align: center;
+    }
+
+    .text .Preformatted_Text{
+        background-color: white;
+        border: 3px solid black;
+        position: relative;
+        text-align: right;
+    }
+
+    .text .search{
+        background-color: white;
+        border: 3px solid black;
+        position: relative;
+        text-align: center;
+    }
+
+    .text .buttons{
+        background-color: white;
+        position: relative;
+        text-align: center;
+        border: 3px solid black;
+    }
+
+    /* Adjust carousel height */
+    .carousel-inner img {
+        width: 100%;
+        max-height: 650px;
+      }
+  
+      /* Custom slide transition */
+      .carousel-inner .item {
+        transition: transform 0.6s ease;
+      }
+  
+      /* Custom slide animations */
+      .slide {
+        animation: slideInRight 0.5s forwards;
+      }
+  
+      @keyframes slideInRight {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+
+      .carousel{
+        position:absolute;
+        bottom: 360px;
+      }
+
+      .jumbotron{
+        position: relative;
+        bottom: 100px;
+      }
+
+} 
+/* Text color classes:
+* .text-muted
+* .text-primary
+* .text-success
+* .text-info
+* .text-warning
+* .text-danger
+* .text-light
+* .text-dark
+*/ 
+/* Background color classes:
+* .bg-primary
+* .bg-success
+* .bg-info
+* .bg-warning
+* .bg-danger
+* .bg-light
+* .bg-dark
+*/
