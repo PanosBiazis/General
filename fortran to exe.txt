@@ -1,0 +1,8 @@
+modern:
+PS F:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ> gfortran myfirstfortran.f90 -o program
+PS F:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ> ./myfirstfortran.exe
+
+
+old version:
+PS F:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ> gfortran myfirstfortran.f -o myfirstfortran2
+PS F:\panag\Documents\ΕΡΓΑΣΤΗΡΙΑΚΕΣ ΑΣΚΗΣΕΙΣ> ./myfirstfortran2.exe

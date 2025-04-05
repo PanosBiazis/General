@@ -1,0 +1,27 @@
+
+for linux:
+nasm -felf64 app2.asm
+ld app2.o -o app
+./app2
+
+for windows:
+nasm -f win64 app2.asm -o app2.obj
+open msys32 mingw64
+gcc app2.obj -o app2.exe
+gcc app3.obj -o app3.exe -lkernel32 -lmsvcrt
+
+OR
+
+nasm -f win64 mainasm.asm -o mainasm.obj
+gcc -o mainasm.exe mainasm.obj -lmsvcrt
+./mainasm.exe
+
+it is good to run msys2 >> mingw32
+
+nasm -f win32 mainasm.asm -o mainasm.obj
+
+gcc mainasm.obj -o mainasm.exe
+
+./mainasm.exe
+
+
