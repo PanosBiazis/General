@@ -1,0 +1,7 @@
+dotnet --version
+
+dotnet new console -o app
+
+dotnet build
+
+dotnet run
