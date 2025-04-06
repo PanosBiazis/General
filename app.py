@@ -1,14 +1,16 @@
-from dotenv import load_dotenv
-import os
+from flask import Flask, render_template, request, jsonify
 
-# Load environment variables from the .env file
-load_dotenv()
+app = Flask(__name__)
 
-# Access environment variables
-DEBUG = os.getenv('DEBUG')
-DATABASE_URL = os.getenv('DATABASE_URL')
-API_KEY = os.getenv('API_KEY')
-SECRET_KEY = os.getenv('SECRET_KEY')
+@app.route('/')
+def index():
+    return render_template("index.html")
 
-print(DEBUG)
-print(DATABASE_URL)
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_message = request.json['message']
+    response_message = f"Echo: {user_message}"  # Replace this with actual bot logic
+    return jsonify(reply=response_message)
+
+if __name__ == '__main__':
+    app.run(debug=True)

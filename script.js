@@ -1,21 +1,30 @@
-// script.js
 function sendMessage() {
-    const input = document.getElementById('userInput').value;
-    if (input.trim() === '') return;
-    
-    document.getElementById('userInput').value = '';
+    const userInput = document.getElementById('user-input').value;
+    if (userInput.trim() === '') return;
 
+    const chatBox = document.getElementById('chat-box');
+
+    // Display user message
     const userMessage = document.createElement('div');
-    userMessage.className = 'user-message';
-    userMessage.textContent = 'You: ' + input;
-    document.getElementById('messages').appendChild(userMessage);
+    userMessage.textContent = 'You: ' + userInput;
+    chatBox.appendChild(userMessage);
 
-    fetch('api_response.php?input=' + encodeURIComponent(input))
-        .then(response => response.json())
-        .then(data => {
-            const botMessage = document.createElement('div');
-            botMessage.className = 'bot-response';
-            botMessage.textContent = 'Chatbot: ' + data.response;
-            document.getElementById('messages').appendChild(botMessage);
-        });
+    // Clear input field
+    document.getElementById('user-input').value = '';
+
+    // Send AJAX request to PHP
+    fetch('chatbot.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'message=' + encodeURIComponent(userInput),
+    })
+    .then(response => response.text())
+    .then(reply => {
+        const botMessage = document.createElement('div');
+        botMessage.textContent = 'Bot: ' + reply;
+        chatBox.appendChild(botMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
 }
