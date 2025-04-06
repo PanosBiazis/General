@@ -1,22 +1,21 @@
-// Initialize Bootstrap modal
-$("#myModal").modal();
+// script.js
+function sendMessage() {
+    const input = document.getElementById('userInput').value;
+    if (input.trim() === '') return;
+    
+    document.getElementById('userInput').value = '';
 
-// Initialize Bootstrap modal with keyboard option disabled
-$("#myModal").modal({ keyboard: false });
+    const userMessage = document.createElement('div');
+    userMessage.className = 'user-message';
+    userMessage.textContent = 'You: ' + input;
+    document.getElementById('messages').appendChild(userMessage);
 
-// Show Bootstrap modal
-$("#myModal").modal('show');
-
-// Toggle Bootstrap button state and add a class
-$(".btn.danger").button("toggle").addClass("fat");
-
-// Store original Bootstrap button function and create an alias
-var bootstrapButton = $.fn.button.noConflict();
-$.fn.bootstrapBtn = bootstrapButton;
-
-// Event handler for modal show event
-$('#myModal').on('show.bs.modal', function(e) {
-    if (!data) {
-        e.preventDefault();
-    }
-});
+    fetch('api_response.php?input=' + encodeURIComponent(input))
+        .then(response => response.json())
+        .then(data => {
+            const botMessage = document.createElement('div');
+            botMessage.className = 'bot-response';
+            botMessage.textContent = 'Chatbot: ' + data.response;
+            document.getElementById('messages').appendChild(botMessage);
+        });
+}

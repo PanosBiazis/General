@@ -1,0 +1,30 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#chatbox {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.user-message {
+    color: blue;
+}
+.bot-response {
+    color: green;
+}
