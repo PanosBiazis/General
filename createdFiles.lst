@@ -1,0 +1,3 @@
+com\example\mlaiapp\service\ModelService.class
+com\example\mlaiapp\controller\ModelController.class
+com\example\mlaiapp\MlAiAppApplication.class
