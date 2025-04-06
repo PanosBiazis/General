@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI/ML App</title>
-    <script>
-        async function predict() {
-            const feature1 = parseFloat(document.getElementById("feature1").value);
-            const feature2 = parseFloat(document.getElementById("feature2").value);
-            const feature3 = parseFloat(document.getElementById("feature3").value);
-
-            const response = await fetch("/api/predict", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ feature1, feature2, feature3 })
-            });
-
-            const prediction = await response.json();
-            document.getElementById("result").innerText = "Prediction: " + prediction;
-        }
-    </script>
+    <title>jQuery Demo</title>
+    <link rel="stylesheet" type="text/css" href="/jQuery_Site/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/jQuery_Site/js/jQuery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/jQuery_Site/js/script.js"></script>
 </head>
 <body>
-    <h1>AI/ML Prediction App</h1>
-    <form onsubmit="predict(); return false;">
-        <label>Feature 1: <input type="text" id="feature1"></label><br>
-        <label>Feature 2: <input type="text" id="feature2"></label><br>
-        <label>Feature 3: <input type="text" id="feature3"></label><br>
-        <button type="submit">Predict</button>
-    </form>
-    <p id="result"></p>
+    <h1>jQuery Demo Site</h1>
+    <p id="intro">Welcome to the jQuery Demo Site!</p>
+
+    <button id="hideBtn">Hide Text</button>
+    <button id="showBtn">Show Text</button>
+    <button id="toggleBtn">Toggle Text</button>
+
+    <div id="box" class="box"></div>
+
+    <input type="button" value="Change Color" id="colorBtn" />
+    <input type="button" value="Fade In" id="fadeInBtn" />
+    <input type="button" value="Fade Out" id="fadeOutBtn" />
+
+
 </body>
 </html>
+
+    
