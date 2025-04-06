@@ -1,49 +1,4 @@
 
-# import random
-# import keyboard
-# import mysql.connector
-# import time
-
-# # Database connection
-# db = mysql.connector.connect(
-#     host="localhost",
-#     user="root",
-#     password="",
-#     database="ai_gbt"
-# )
-# cursor = db.cursor()
-
-# print("Generating random numbers. Press ESC or Ctrl+C to stop...")
-
-# try:
-#     while True:
-#         # Generate random number
-#         random_number = random.randint(1, 1000)
-        
-#         # Insert into database
-#         sql = "INSERT INTO random_numbers (number) VALUES (%s)"
-#         cursor.execute(sql, (random_number,))
-#         db.commit()
-        
-#         print(f"Generated and inserted: {random_number}")
-        
-#         # Check if ESC is pressed
-#         if keyboard.is_pressed('esc'):
-#             print("\nESC pressed. Stopping...")
-#             break
-            
-#         time.sleep(1)  # Wait 1 second before next number
-
-# except KeyboardInterrupt:
-#     print("\nCtrl+C pressed. Stopping...")
-
-# except Exception as e:
-#     print(f"An error occurred: {e}")
-
-# finally:
-#     cursor.close()
-#     db.close()
-#     print("Database connection closed.")
 import random
 import keyboard
 import mysql.connector
