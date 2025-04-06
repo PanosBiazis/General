@@ -1,0 +1,17 @@
+Make sure that you have organise into two folders source for .java and classes,then open cmd as administrator.
+write cd C:\Users\panag\Documents\tries
+if your files are in different directory saved then write cd/
+write d:
+Furthermore, change the directory i  wrote after this step
+write cd source
+write javac -d ../classes *.java
+write cd C:\Users\panag\Documents\tries
+write cd C:\Users\panag\Documents\tries\classes\myJavaproject
+make a txt file called manifest.txt
+inside this file write "Main-Class: myfirst_class"
+save the file and close it
+go to cmd (Make sure you are on this directory "C:\Users\panag\Documents\tries\classes\myJavaproject") and write jar -cvmf manifest.txt myfirst_class.jar *.class
+If you see on the directory, you can realise that  it has been created a file myfirst_class.jar and this your executable file.
+
+
+
