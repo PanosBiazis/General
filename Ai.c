@@ -1,78 +1,45 @@
+// #include <math.h>
+// #include <time.h>
+// #include <conio.h> 
+// #include <windows.h>
+// #include <io.h>
 #include <stdio.h>
-#include <math.h>
+// #include <stdlib.h>
+#include <string.h>
 
-#define LEARNING_RATE 0.1
-#define EPOCHS 10
 
-// Activation function
-double activation(double sum) {
-    return sum > 0 ? 1 : 0;
-}
-
-// Perceptron training function
-void perceptron(double weights[], double bias, double inputs[], int length, double target) {
-    double sum = 0;
-
-    // Calculate weighted sum
-    for (int i = 0; i < length; i++) {
-        sum += weights[i] * inputs[i];
+void get_info_f(char dat[11][11], char dat2[11][11]) {
+    // Get 10 strings for dat and 10 strings for dat2
+    for (int l = 0; l < 10; l++) {
+        printf("Give an information: ");
+        fgets(&dat[l][0], 10, stdin); // + l to store the string at the correct index
+        dat[l][strcspn(dat[l], "\n")] = 0; // Remove newline character
+        printf("The %dth data is %s\n", l + 1, dat[l]);
     }
 
-    // Add bias to the sum
-    sum += bias;
-
-    // Get perceptron output
-    double output = activation(sum);
-
-    // Calculate error
-    double error = target - output;
-
-    // Update weights and bias
-    for (int i = 0; i < length; i++) {
-        weights[i] += LEARNING_RATE * error * inputs[i];
+    for (int m = 0; m < 10; m++) {
+        printf("Give another information: ");
+        fgets(&dat2[m][0], 10, stdin);
+        dat2[m][strcspn(dat2[m], "\n")] = 0; // Remove newline character
+        printf("The %dth data2 is %s\n", m + 1, dat2[m]);
     }
-    bias += LEARNING_RATE * error;
-
-    // Verbose output
-    printf("Updated weights: ");
-    for (int i = 0; i < length; i++) {
-        printf("%f ", weights[i]);
-    }
-    printf(" | Bias: %f | Error: %f\n", bias, error);
 }
 
 int main() {
-    // Initialize weights and bias
-    double weights[] = {0.2, 0.3};
-    double bias = 0.1;
-    
-    // Training data: inputs and corresponding targets
-    double inputs[][2] = {
-        {1, 0},
-        {0, 1},
-        {1, 1},
-        {0, 0}
-    };
-    double targets[] = {1, 1, 0, 0};
+    char data[11][11], data2[11][11];
+    get_info_f(data, data2);
 
-    int num_samples = sizeof(targets) / sizeof(targets[0]);
-    int num_inputs = sizeof(inputs[0]) / sizeof(inputs[0][0]);
-
-    // Training loop
-    for (int epoch = 0; epoch < EPOCHS; epoch++) {
-        printf("Epoch %d\n", epoch + 1);
-        for (int i = 0; i < num_samples; i++) {
-            perceptron(weights, bias, inputs[i], num_inputs, targets[i]);
-        }
-        printf("\n");
+    printf("Data: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%s ", data[i]);
     }
+    printf("\n");
 
-    // Final weights and bias
-    printf("Final weights: ");
-    for (int i = 0; i < num_inputs; i++) {
-        printf("%f ", weights[i]);
+    printf("Data2: ");
+    for (int k = 0; k < 10; k++) {
+        printf("%s ", data2[k]);
     }
-    printf(" | Final bias: %f\n", bias);
+    printf("\n");
 
     return 0;
 }
